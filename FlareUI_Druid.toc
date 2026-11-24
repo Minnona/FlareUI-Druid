@@ -1,11 +1,11 @@
 ## Interface: 16001
 ## Title: FlareUI Druid
-## Version: 0.1.7
+## Version: 0.1.8
 ## Author: Minn
 ## Notes: Druid extras for FlareUI. Hides shapeshift mana at full mana.
 ## RequiredDeps: FlareUI
 ## SavedVariables: FlareUIDruidDB
-## IconAtlas: ClassHall-Circle-Druid
+## IconTexture: Interface\Icons\ClassIcon_Druid
 
 Layout.lua
 Core.lua

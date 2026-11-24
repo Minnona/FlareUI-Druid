@@ -126,7 +126,7 @@ SlashCmdList.FLAREUIDRUID = function(message)
             return tostring(value)
         end
         local frame = _G.FlareUI_UF_Player
-        Say("Debug 0.1.7: installed=" .. tostring(installed)
+        Say("Debug 0.1.8: installed=" .. tostring(installed)
             .. ", hook=" .. tostring(installed and unitFrames.ShiftManaShown == installedShown)
             .. ", frame=" .. tostring(frame ~= nil))
         Say("mana=" .. Value(UnitPower("player", Enum.PowerType.Mana))
