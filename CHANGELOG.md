@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.6 — 2026-11-24
+
+- Added a circular druid icon to the addon list.
+
 ## 0.1.5 — 2026-11-24
 
 Initial release.
