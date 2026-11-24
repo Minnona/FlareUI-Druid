@@ -1,0 +1,6 @@
+/dist/
+/upstream/
+__pycache__/
+*.pyc
+AGENTS.md
+AGENTS.MD

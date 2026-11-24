@@ -1,0 +1,31 @@
+name: Check addon
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out addon
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Check out FlareUI 7.0.12 for integration checks
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: malkkav/FlareUI
+          ref: 79e4a1e5cdadc378d9a6e4d042770681f1988a38
+          path: upstream/FlareUI
+          persist-credentials: false
+      - name: Install Lua 5.1
+        run: sudo apt-get update && sudo apt-get install -y lua5.1
+      - name: Check Lua syntax
+        run: luac5.1 -p FlareUI_Druid/Core.lua FlareUI_Druid/Layout.lua tests/run.lua
+      - name: Check FlareUI integration
+        run: lua5.1 tests/run.lua upstream/FlareUI
+      - name: Build addon ZIP
+        run: python3 tools/package.py
